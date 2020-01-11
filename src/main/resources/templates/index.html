@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link data-th-href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link data-th-href="@{/css/main.css}" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div id="title">
+            <h1>Live Algorithm Updates</h1>
+
+            <h2>HELLO,  [[${name}]]</h2>
+        </div>
+
+        <table id="algorithmResponses" class="table table-striped">
+            <thead>
+            <tr>
+                <th width="10%">Name</th>
+                <th width="60%">CodeSnippet</th>
+                <th width="30%">CategoryDescription</th>
+                <th width="30%">DifficultyLevel</th>
+                <th width="30%">Category Tags</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="result" data-th-each="algorithm : ${algorithmResponses}">
+                <td>[[${algorithmDomainModel.name}]]</td>
+                <td>[[${algorithmDomainModel.codeSnippet}]]</td>
+                <td>[[${algorithmDomainModel.categoryDescription}]]</td>
+                <td>[[${algorithmDomainModel.difficultyLevel}]]</td>
+                <td>[[${algorithmDomainModel.categoryTags}]]</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script data-th-src="@{/js/main.js}"></script>
+
+</body>
+
+</html>
